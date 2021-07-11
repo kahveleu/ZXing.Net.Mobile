@@ -215,7 +215,7 @@ namespace ZXing.Mobile.CameraAccess
 			}
 		}
 
-		void ApplyCameraSettings(bool openClosedCamera)
+		void ApplyCameraSettings(bool openClosedCamera = true)
 		{
 			if (Camera == null && openClosedCamera)
 			{

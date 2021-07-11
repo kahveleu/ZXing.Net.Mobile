@@ -27,7 +27,7 @@ namespace ZXing.Mobile
 			if (cameraAnalyzer == null)
 				cameraAnalyzer = new CameraAnalyzer(this, this);
 
-			cameraAnalyzer.ResumeAnalysis();
+			if (IsAnalyzing) cameraAnalyzer.ResumeAnalysis();
 
 			if (!addedHolderCallback)
 			{

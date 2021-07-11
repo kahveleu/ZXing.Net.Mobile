@@ -45,7 +45,7 @@ namespace ZXing.Mobile.CameraAccess
 		public void SetupCamera()
 		{
 			cameraEventListener.OnPreviewFrameReady += HandleOnPreviewFrameReady;
-			cameraController.SetupCamera();
+			if (IsAnalyzing) cameraController.SetupCamera();
 			barcodeReader = scannerHost.ScanningOptions.BuildBarcodeReader();
 		}
 
