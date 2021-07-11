@@ -56,7 +56,7 @@ namespace ZXing.Mobile.CameraAccess
 			=> cameraController.AutoFocus(x, y);
 
 		public void RefreshCamera()
-			=> cameraController.RefreshCamera();
+			=> cameraController.RefreshCamera(IsAnalyzing);
 
 		bool CanAnalyzeFrame
 		{

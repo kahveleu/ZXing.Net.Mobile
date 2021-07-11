@@ -36,11 +36,11 @@ namespace ZXing.Mobile.CameraAccess
 
 		public int LastCameraDisplayOrientationDegree { get; private set; }
 
-		public void RefreshCamera()
+		public void RefreshCamera(bool openClosedCamera)
 		{
 			if (holder == null) return;
 
-			ApplyCameraSettings();
+			ApplyCameraSettings(openClosedCamera);
 
 			try
 			{
@@ -215,9 +215,9 @@ namespace ZXing.Mobile.CameraAccess
 			}
 		}
 
-		void ApplyCameraSettings()
+		void ApplyCameraSettings(bool openClosedCamera)
 		{
-			if (Camera == null)
+			if (Camera == null && openClosedCamera)
 			{
 				OpenCamera();
 			}
